@@ -1,0 +1,40 @@
+{
+  "name": "vscode-bayon-snippets",
+  "displayName": "Bayon Snippets",
+  "description": "Code snippets for React",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.58.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "keywords": [
+    "Bayon",
+    "Bayon Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/javascript.json"
+      }
+    ]
+  },
+  "scripts": {
+    "prebuild": "node merge.js",
+    "build": "vsce package",
+    "prepublish": "yarn build",
+    "publish": "vsce publish",
+    "preinstall": "yarn build",
+    "install": "code --install-extension vscode-bayon-snippet-$npm_package_version.vsix"
+  },
+  "devDependencies": {
+    "glob": "^7.1.4",
+    "prettier": "^2.3.2"
+  }
+}

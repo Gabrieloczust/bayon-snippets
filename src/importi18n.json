@@ -1,0 +1,7 @@
+{
+  "importI18n": {
+    "prefix": ["ibi"],
+    "body": ["import { $1 } from '@bayon/i18n';"],
+    "description": "Import @bayon/i18n"
+  }
+}

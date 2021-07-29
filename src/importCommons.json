@@ -1,0 +1,7 @@
+{
+  "importCommons": {
+    "prefix": ["ibc"],
+    "body": ["import { $1 } from '@bayon/commons';"],
+    "description": "Import @bayon/commons"
+  }
+}

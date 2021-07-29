@@ -1,0 +1,7 @@
+{
+  "importForm": {
+    "prefix": ["ibf"],
+    "body": ["import { $1 } from '@bayon/form';"],
+    "description": "Import @bayon/form"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "createTest": {
+    "prefix": ["bt", "cbt"],
+    "body": [
+      "import React from 'react';",
+      "import { render } from '@bayon/testing';",
+      "",
+      "import ${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} from '.';",
+      "",
+      "describe('<${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} />', () => {",
+      "  it('should render component', () => {",
+      "    const { container } = createComponent();",
+      "    expect(container.firstChild).toBeDefined();",
+      "  });",
+      "});",
+      "",
+      "const createComponent = (props = {}) => {",
+      "  return render(<${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} {...props} />);",
+      "};",
+      ""
+    ],
+    "description": "Create test file"
+  }
+}

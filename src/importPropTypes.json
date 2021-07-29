@@ -1,0 +1,7 @@
+{
+  "importPropTypes": {
+    "prefix": ["ipt"],
+    "body": ["import PropTypes from 'prop-types';"],
+    "description": "Import prop-types"
+  }
+}

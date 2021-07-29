@@ -1,0 +1,14 @@
+{
+  "createStyles": {
+    "prefix": ["bs", "cbs"],
+    "body": [
+      "import { styled } from '@bayon/commons';",
+      "",
+      "export const Container = styled('div')(() => ({",
+      "  $1",
+      "}));",
+      ""
+    ],
+    "description": "Create styles file"
+  }
+}
