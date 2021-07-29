@@ -2,6 +2,24 @@
   <h1 align="center">Bayon Snippets (Visual Studio Code)</h1>
 </p>
 
+<p align="center">
+  <a href="https://github.com/Gabrieloczust/bayon-snippets">
+    <img src="https://img.shields.io/github/repo-size/Gabrieloczust/bayon-snippets?style=plastic&color=4ac51c">
+  </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=gabrieloczust.vscode-bayon-snippets">
+    <img src="https://vsmarketplacebadge.apphb.com/version-short/gabrieloczust.vscode-bayon-snippets.svg?style=plastic&color=61dafb">
+  </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=gabrieloczust.vscode-bayon-snippets">
+    <img src="https://vsmarketplacebadge.apphb.com/installs-short/gabrieloczust.vscode-bayon-snippets.svg?style=plastic&color=4ac51c">
+  </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=gabrieloczust.vscode-bayon-snippets">
+    <img src="https://vsmarketplacebadge.apphb.com/rating-short/gabrieloczust.vscode-bayon-snippets.svg?style=plastic&color=4ac51c">
+  </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=gabrieloczust.vscode-bayon-snippets">
+    <img src="https://img.shields.io/github/license/Gabrieloczust/bayon-snippets?maxAge=2592000&style=plastic&color=4ac51c">
+  </a>
+</p>
+
 ## Snippets
 
 - Import
@@ -9,15 +27,14 @@
 - Create Test
 - Create Styles
 
-
 ### Import
 
-| prefix    | body                                               | description                       |
-| --------- | -------------------------------------------------- | --------------------------------- |
-| `ibc`     | <code>import {  } from '@bayon/commons';</code>    | **i**mport @**b**ayon/**c**ommons |
-| `ibf`     | <code>import {  } from '@bayon/form';</code>       | **i**mport @**b**ayon/**f**orm    |
-| `ibi`     | <code>import {  } from '@bayon/i18n';</code>       | **i**mport @**b**ayon/**i**18n    |
-| `ipt`     | <code>import PropTypes from 'prop-types';</code>   | **i**mport **p**rop-**t**ypes     |
+| prefix | body                                             | description                       |
+| ------ | ------------------------------------------------ | --------------------------------- |
+| `ibc`  | <code>import { } from '@bayon/commons';</code>   | **i**mport @**b**ayon/**c**ommons |
+| `ibf`  | <code>import { } from '@bayon/form';</code>      | **i**mport @**b**ayon/**f**orm    |
+| `ibi`  | <code>import { } from '@bayon/i18n';</code>      | **i**mport @**b**ayon/**i**18n    |
+| `ipt`  | <code>import PropTypes from 'prop-types';</code> | **i**mport **p**rop-**t**ypes     |
 
 ### Create
 
@@ -40,7 +57,6 @@ const FileName = () => {
 };
 
 export default FileName;
-
 ```
 
 ```javascript
@@ -60,7 +76,6 @@ describe('<FileName />', () => {
 const createComponent = (props = {}) => {
   return render(<FileName {...props} />);
 };
-
 ```
 
 ```javascript
