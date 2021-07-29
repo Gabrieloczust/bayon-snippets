@@ -39,7 +39,7 @@ const FileName = () => {
   );
 };
 
-export default ;
+export default FileName;
 
 ```
 
