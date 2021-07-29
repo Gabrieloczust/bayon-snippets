@@ -1,5 +1,5 @@
 <p>
-  <h1 align="center">Bayon Snippet (Visual Studio Code)</h1>
+  <h1 align="center">Bayon Snippets (Visual Studio Code)</h1>
 </p>
 
 ## Snippets
@@ -29,7 +29,7 @@
 // cbc  ↵
 import React from 'react';
 
-// import * as S from './.styles';
+// import * as S from './FileName.styles';
 
 const FileName = () => {
   return (
