@@ -24,8 +24,9 @@
 
 - Import
 - Create Const Component
-- Create Test
 - Create Styles
+- Create Test
+- Create Bayon Setup Tests
 
 ### Import
 
@@ -39,8 +40,9 @@
 ### Create
 
 - `cbc` - **C**reate **B**ayon **C**onst **C**omponent
-- `cbt` - **C**reate **B**ayon **T**est
 - `cbs` - **C**reate **B**ayon **S**tyles
+- `cbt` - **C**reate **B**ayon **T**est
+- `cbst` - **C**reate **B**ayon **S**etup **T**ests
 
 ```javascript
 // cbc  ↵
@@ -85,5 +87,12 @@ import { styled } from '@bayon/commons';
 export const Container = styled('div')(() => ({
   "cursor"
 }))
+
+```
+
+```javascript
+// cbst  ↵
+import { bayonSetupTests } from '@bayon/testing';
+bayonSetupTests();
 
 ```
