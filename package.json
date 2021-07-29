@@ -1,5 +1,6 @@
 {
   "name": "vscode-bayon-snippets",
+  "publisher": "GabrielOczust",
   "displayName": "Bayon Snippets",
   "description": "Code snippets for React",
   "icon": "art/icon.png",
