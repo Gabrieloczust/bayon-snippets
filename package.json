@@ -7,9 +7,9 @@
   "version": "0.0.3",
   "license": "MIT",
   "repository": {
-		"type": "git",
-		"url": "https://github.com/Gabrieloczust/bayon-snippets/blob/master/README.md"
-	},
+    "type": "git",
+    "url": "https://github.com/Gabrieloczust/bayon-snippets/blob/master/README.md"
+  },
   "engines": {
     "vscode": "^1.58.0"
   },
@@ -42,7 +42,12 @@
     "install": "code --install-extension vscode-bayon-snippet-$npm_package_version.vsix"
   },
   "devDependencies": {
-    "glob": "^7.1.4",
     "prettier": "^2.3.2"
+  },
+  "dependencies": {
+    "generator-code": "^1.6.9",
+    "glob": "^7.2.0",
+    "vsce": "^2.7.0",
+    "yo": "^4.3.0"
   }
 }

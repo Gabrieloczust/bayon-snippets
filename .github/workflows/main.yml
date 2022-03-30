@@ -11,14 +11,6 @@ jobs:
       - uses: borales/actions-yarn@v2.3.0
         with:
           cmd: install # will run `yarn install` command
-  build:
-    name: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: build # will run `yarn build` command
   publish:
     name: publish
     runs-on: ubuntu-latest
