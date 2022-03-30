@@ -1,0 +1,7 @@
+{
+  "importAnalytics": {
+    "prefix": ["iba"],
+    "body": ["import { $1 } from '@bayon/analytics';"],
+    "description": "Import @bayon/analytics"
+  }
+}

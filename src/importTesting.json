@@ -1,0 +1,7 @@
+{
+  "importTesting": {
+    "prefix": ["ibt"],
+    "body": ["import { $1 } from '@bayon/testing';"],
+    "description": "Import @bayon/testing"
+  }
+}

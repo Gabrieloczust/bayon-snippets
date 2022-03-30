@@ -23,26 +23,29 @@
 ## Snippets
 
 - Import
-- Create Const Component
+- Create Component
 - Create Styles
 - Create Test
-- Create Bayon Setup Tests
 
 ### Import
 
-| prefix | body                                             | description                       |
-| ------ | ------------------------------------------------ | --------------------------------- |
-| `ibc`  | <code>import { } from '@bayon/commons';</code>   | **i**mport @**b**ayon/**c**ommons |
-| `ibf`  | <code>import { } from '@bayon/form';</code>      | **i**mport @**b**ayon/**f**orm    |
-| `ibi`  | <code>import { } from '@bayon/i18n';</code>      | **i**mport @**b**ayon/**i**18n    |
-| `ipt`  | <code>import PropTypes from 'prop-types';</code> | **i**mport **p**rop-**t**ypes     |
+| prefix | body                                             | description                         |
+| ------ | ------------------------------------------------ | ----------------------------------- |
+| `iba`  | <code>import { } from '@bayon/analytics';</code> | **i**mport @**b**ayon/**a**nalytics |
+| `ibc`  | <code>import { } from '@bayon/commons';</code>   | **i**mport @**b**ayon/**c**ommons   |
+| `ibd`  | <code>import { } from '@bayon/date';</code>      | **i**mport @**b**ayon/**d**ate      |
+| `ibe`  | <code>import { } from '@bayon/editor';</code>    | **i**mport @**b**ayon/**e**ditor    |
+| `ibf`  | <code>import { } from '@bayon/form';</code>      | **i**mport @**b**ayon/**f**orm      |
+| `ibfe` | <code>import { } from '@bayon/fetch';</code>     | **i**mport @**b**ayon/**fe**tch     |
+| `ibi`  | <code>import { } from '@bayon/i18n';</code>      | **i**mport @**b**ayon/**i**18n      |
+| `ibp`  | <code>import { } from '@bayon/panel';</code>     | **i**mport @**b**ayon/**p**anel     |
+| `ibs`  | <code>import { } from '@bayon/svg-icons';</code> | **i**mport @**b**ayon/**s**vg-icons |
+| `ibt`  | <code>import { } from '@bayon/testing';</code>   | **i**mport @**b**ayon/**t**esting   |
+| `ipt`  | <code>import PropTypes from 'prop-types';</code> | **i**mport **p**rop-**t**ypes       |
 
 ### Create
 
-- `cbc` - **C**reate **B**ayon **C**onst **C**omponent
-- `cbs` - **C**reate **B**ayon **S**tyles
-- `cbt` - **C**reate **B**ayon **T**est
-- `cbst` - **C**reate **B**ayon **S**etup **T**ests
+- `cbc` || `bc` - **C**reate **B**ayon **C**omponent
 
 ```javascript
 // cbc  ↵
@@ -59,12 +62,15 @@ const FileName = () => {
 };
 
 export default FileName;
+
 ```
+
+- `cbt` || `bt` - **C**reate **B**ayon **T**est
 
 ```javascript
 // cbt  ↵
 import React from 'react';
-import { render } from '@bayon/testing';
+import { render, TestProvider } from '@bayon/testing';
 
 import FileName from '.';
 
@@ -76,9 +82,16 @@ describe('<FileName />', () => {
 });
 
 const createComponent = (props = {}) => {
-  return render(<FileName {...props} />);
+  return render(
+    <TestProvider>
+      <FileName {...props} />
+    </TestProvider>
+  );
 };
+
 ```
+
+- `cbs` || `bs` - **C**reate **B**ayon **S**tyles
 
 ```javascript
 // cbs  ↵
@@ -87,12 +100,5 @@ import { styled } from '@bayon/commons';
 export const Container = styled('div')(() => ({
   "cursor"
 }))
-
-```
-
-```javascript
-// cbst  ↵
-import { bayonSetupTests } from '@bayon/testing';
-bayonSetupTests();
 
 ```

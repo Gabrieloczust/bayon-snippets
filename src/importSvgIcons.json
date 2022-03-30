@@ -1,0 +1,7 @@
+{
+  "importSvgIcons": {
+    "prefix": ["ibs"],
+    "body": ["import { $1 } from '@bayon/svg-icons';"],
+    "description": "Import @bayon/svg-icons"
+  }
+}

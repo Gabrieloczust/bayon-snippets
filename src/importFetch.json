@@ -1,0 +1,7 @@
+{
+  "importFetch": {
+    "prefix": ["ibfe"],
+    "body": ["import { $1 } from '@bayon/fetch';"],
+    "description": "Import @bayon/fetch"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "importDate": {
+    "prefix": ["ibd"],
+    "body": ["import { $1 } from '@bayon/date';"],
+    "description": "Import @bayon/date"
+  }
+}
