@@ -3,7 +3,7 @@
     "prefix": ["bt", "cbt"],
     "body": [
       "import React from 'react';",
-      "import { render } from '@bayon/testing';",
+      "import { render, TestProvider } from '@bayon/testing';",
       "",
       "import ${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} from '.';",
       "",
@@ -15,10 +15,14 @@
       "});",
       "",
       "const createComponent = (props = {}) => {",
-      "  return render(<${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} {...props} />);",
+      "  return render(",
+      "    <TestProvider>",
+      "      <${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} {...props} />",
+      "    </TestProvider>",
+      "  );",
       "};",
       ""
     ],
-    "description": "Create test file"
+    "description": "Create test"
   }
 }

@@ -17,6 +17,6 @@
       "export default ${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/};",
       ""
     ],
-    "description": "Create Const Component"
+    "description": "Create Component"
   }
 }
