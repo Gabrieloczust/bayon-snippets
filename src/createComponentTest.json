@@ -11,7 +11,7 @@
       "  it('should render component', () => {",
       "    const { container } = createComponent();",
       "    expect(container.firstChild).toBeDefined();",
-      "  });",
+      "  });$1",
       "});",
       "",
       "const createComponent = (props = {}) => {",

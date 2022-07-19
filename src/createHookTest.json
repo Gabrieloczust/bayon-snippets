@@ -8,7 +8,7 @@
       "describe('${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} hook', () => {",
       "  it('should return a function', () => {",
       "    const { result } = renderHook(() => ${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}($1));",
-      "    expect(typeof result.current.handleKeyDown).toBe('function');",
+      "    expect(typeof result.current.${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}).toBe('function');",
       "  });",
       "});",
       ""
