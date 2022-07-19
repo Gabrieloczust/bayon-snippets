@@ -36,9 +36,8 @@
 | `iba`  | <code>import { } from '@bayon/analytics';</code> | **i**mport @**b**ayon/**a**nalytics |
 | `ibc`  | <code>import { } from '@bayon/commons';</code>   | **i**mport @**b**ayon/**c**ommons   |
 | `ibd`  | <code>import { } from '@bayon/date';</code>      | **i**mport @**b**ayon/**d**ate      |
-| `ibe`  | <code>import { } from '@bayon/editor';</code>    | **i**mport @**b**ayon/**e**ditor    |
-| `ibf`  | <code>import { } from '@bayon/form';</code>      | **i**mport @**b**ayon/**f**orm      |
 | `ibfe` | <code>import { } from '@bayon/fetch';</code>     | **i**mport @**b**ayon/**fe**tch     |
+| `ibf`  | <code>import { } from '@bayon/form';</code>      | **i**mport @**b**ayon/**f**orm      |
 | `ibi`  | <code>import { } from '@bayon/i18n';</code>      | **i**mport @**b**ayon/**i**18n      |
 | `ibs`  | <code>import { } from '@bayon/svg-icons';</code> | **i**mport @**b**ayon/**s**vg-icons |
 | `ibt`  | <code>import { } from '@bayon/testing';</code>   | **i**mport @**b**ayon/**t**esting   |
