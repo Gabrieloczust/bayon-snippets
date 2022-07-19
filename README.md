@@ -131,7 +131,6 @@ describe('FileName hook', () => {
 
 ```javascript
 // cbut  ↵
-import { renderHook } from '@testing-library/react-hooks';
 import FileName from '.';
 
 describe('FileName util', () => {
