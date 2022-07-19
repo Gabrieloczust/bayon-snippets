@@ -1,0 +1,16 @@
+{
+  "createUtilTest": {
+    "prefix": ["cbut", "but", "bu"],
+    "body": [
+      "import ${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} from '.';",
+      "",
+      "describe('${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} util', () => {",
+      "  it('should $1', () => {",
+      "    expect(${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}($2)).toEqual($3);",
+      "  });",
+      "});",
+      ""
+    ],
+    "description": "Create Util Test"
+  }
+}

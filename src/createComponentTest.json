@@ -1,6 +1,6 @@
 {
-  "createTest": {
-    "prefix": ["bt", "cbt"],
+  "createComponentTest": {
+    "prefix": ["cbct", "bct", "bt"],
     "body": [
       "import React from 'react';",
       "import { render, TestProvider } from '@bayon/testing';",
@@ -23,6 +23,6 @@
       "};",
       ""
     ],
-    "description": "Create test"
+    "description": "Create Component Test"
   }
 }

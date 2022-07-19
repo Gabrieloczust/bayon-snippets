@@ -1,6 +1,6 @@
 {
   "createComponent": {
-    "prefix": ["bc", "cbc"],
+    "prefix": ["cbc", "bc"],
     "body": [
       "import React from 'react';",
       "",

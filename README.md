@@ -22,12 +22,14 @@
 
 ## Snippets
 
-- Import
+- Imports
 - Create Component
 - Create Styles
-- Create Test
+- Create Component Test
+- Create Util Test
+- Create Hook Test
 
-### Import
+### Imports
 
 | prefix | body                                             | description                         |
 | ------ | ------------------------------------------------ | ----------------------------------- |
@@ -38,12 +40,11 @@
 | `ibf`  | <code>import { } from '@bayon/form';</code>      | **i**mport @**b**ayon/**f**orm      |
 | `ibfe` | <code>import { } from '@bayon/fetch';</code>     | **i**mport @**b**ayon/**fe**tch     |
 | `ibi`  | <code>import { } from '@bayon/i18n';</code>      | **i**mport @**b**ayon/**i**18n      |
-| `ibp`  | <code>import { } from '@bayon/panel';</code>     | **i**mport @**b**ayon/**p**anel     |
 | `ibs`  | <code>import { } from '@bayon/svg-icons';</code> | **i**mport @**b**ayon/**s**vg-icons |
 | `ibt`  | <code>import { } from '@bayon/testing';</code>   | **i**mport @**b**ayon/**t**esting   |
 | `ipt`  | <code>import PropTypes from 'prop-types';</code> | **i**mport **p**rop-**t**ypes       |
 
-### Create
+### Create Component
 
 - `cbc` || `bc` - **C**reate **B**ayon **C**omponent
 
@@ -65,10 +66,26 @@ export default FileName;
 
 ```
 
-- `cbt` || `bt` - **C**reate **B**ayon **T**est
+### Create Styles
+
+- `cbs` || `bs` - **C**reate **B**ayon **S**tyles
 
 ```javascript
-// cbt  ↵
+// cbs  ↵
+import { styled } from '@bayon/commons';
+
+export const Container = styled('div')(() => ({
+  "cursor"
+}));
+
+```
+
+### Create Component Test
+
+- `cbct` || `cbt` || `bt` - **C**reate **B**ayon **C**omponent **T**est
+
+```javascript
+// cbct  ↵
 import React from 'react';
 import { render, TestProvider } from '@bayon/testing';
 
@@ -91,14 +108,37 @@ const createComponent = (props = {}) => {
 
 ```
 
-- `cbs` || `bs` - **C**reate **B**ayon **S**tyles
+### Create Hook Test
+
+- `cbht` || `bht` || `bh` - **C**reate **B**ayon **H**ook **T**est
 
 ```javascript
-// cbs  ↵
-import { styled } from '@bayon/commons';
+// cbht  ↵
+import { renderHook } from '@testing-library/react-hooks';
+import FileName from '.';
 
-export const Container = styled('div')(() => ({
-  "cursor"
-}))
+describe('FileName hook', () => {
+  it('should return a function', () => {
+    const { result } = renderHook(() => FileName("cursor"));
+    expect(typeof result.current.FileName).toBe('function');
+  });
+});
+
+```
+
+### Create Util Test
+
+- `cbut` || `but` || `bu` - **C**reate **B**ayon **U**til **T**est
+
+```javascript
+// cbut  ↵
+import { renderHook } from '@testing-library/react-hooks';
+import FileName from '.';
+
+describe('FileName util', () => {
+  it('should "cursor 1"', () => {
+    expect(FileName("cursor 2")).toEqual("cursor 3");
+  });
+});
 
 ```

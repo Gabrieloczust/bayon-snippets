@@ -1,0 +1,18 @@
+{
+  "createHookTest": {
+    "prefix": ["cbht", "bht", "bh"],
+    "body": [
+      "import { renderHook } from '@testing-library/react-hooks';",
+      "import ${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} from '.';",
+      "",
+      "describe('${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} hook', () => {",
+      "  it('should return a function', () => {",
+      "    const { result } = renderHook(() => ${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}($1));",
+      "    expect(typeof result.current.handleKeyDown).toBe('function');",
+      "  });",
+      "});",
+      ""
+    ],
+    "description": "Create Hook Test"
+  }
+}

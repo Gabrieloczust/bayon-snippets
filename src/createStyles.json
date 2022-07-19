@@ -1,6 +1,6 @@
 {
   "createStyles": {
-    "prefix": ["bs", "cbs"],
+    "prefix": ["cbs", "bs"],
     "body": [
       "import { styled } from '@bayon/commons';",
       "",
