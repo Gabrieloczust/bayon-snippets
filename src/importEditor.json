@@ -1,7 +1,0 @@
-{
-  "importEditor": {
-    "prefix": ["ibe"],
-    "body": ["import { $1 } from '@bayon/editor';"],
-    "description": "Import @bayon/editor"
-  }
-}

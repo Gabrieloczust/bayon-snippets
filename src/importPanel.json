@@ -1,7 +1,0 @@
-{
-  "importPanel": {
-    "prefix": ["ibp"],
-    "body": ["import { $1 } from '@bayon/panel';"],
-    "description": "Import @bayon/panel"
-  }
-}
