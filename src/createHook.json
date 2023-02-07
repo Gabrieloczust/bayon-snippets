@@ -1,0 +1,16 @@
+{
+  "createHook": {
+    "prefix": ["cbh", "bh"],
+    "body": [
+      "export const ${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} = () => {",
+      "  const $cursor = () => {",
+      "",
+      "  }",
+      "",
+      "  return { $cursor }",
+      "};",
+      ""
+    ],
+    "description": "Create Hook"
+  }
+}

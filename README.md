@@ -24,6 +24,7 @@
 
 - Imports
 - Create Component
+- Create Hook
 - Create Styles
 - Create Component Test
 - Create Util Test
@@ -53,7 +54,7 @@ import React from 'react';
 
 // import * as S from './FileName.styles';
 
-const FileName = () => {
+export const FileName = () => {
   return (
     <>
       <div>"cursor"</div>
@@ -61,7 +62,21 @@ const FileName = () => {
   );
 };
 
-export default FileName;
+```
+
+### Create Hook
+
+- `cbh` || `bh` - **C**reate **B**ayon **H**ook
+
+```javascript
+// cbh  ↵
+export const FileName = () => {
+  const $cursor = () => {
+
+  }
+
+  return { $cursor }
+};
 
 ```
 
@@ -88,7 +103,7 @@ export const Container = styled('div')(() => ({
 import React from 'react';
 import { render, TestProvider } from '@bayon/testing';
 
-import FileName from '.';
+import { FileName } from '.';
 
 describe('<FileName />', () => {
   it('should render component', () => {
@@ -114,12 +129,11 @@ const createComponent = (props = {}) => {
 ```javascript
 // cbht  ↵
 import { renderHook } from '@testing-library/react-hooks';
-import FileName from '.';
+import { FileName } from '.';
 
 describe('FileName hook', () => {
-  it('should return a function', () => {
-    const { result } = renderHook(() => FileName("cursor"));
-    expect(typeof result.current.FileName).toBe('function');
+  it('"cursor 1"', () => {
+    const { result } = renderHook(() => FileName("cursor 2"));
   });
 });
 
