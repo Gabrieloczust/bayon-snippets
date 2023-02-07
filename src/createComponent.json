@@ -6,15 +6,13 @@
       "",
       "// import * as S from './${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}.styles';",
       "",
-      "const ${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} = () => {",
+      "export const ${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} = () => {",
       "  return (",
       "    <>",
       "      <div>$1</div>",
       "    </>",
       "  );",
       "};",
-      "",
-      "export default ${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/};",
       ""
     ],
     "description": "Create Component"

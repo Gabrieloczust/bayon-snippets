@@ -5,7 +5,7 @@
       "import React from 'react';",
       "import { render, TestProvider } from '@bayon/testing';",
       "",
-      "import ${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} from '.';",
+      "import { ${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} } from '.';",
       "",
       "describe('<${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} />', () => {",
       "  it('should render component', () => {",
