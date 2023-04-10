@@ -4,13 +4,13 @@
     "body": [
       "import React from 'react';",
       "",
-      "// import * as S from './${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}.styles';",
+      "import * as Styles from './${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}.styles';",
       "",
       "export const ${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} = () => {",
       "  return (",
-      "    <>",
+      "    <Styles.Container>",
       "      <div>$1</div>",
-      "    </>",
+      "    </Styles.Container>",
       "  );",
       "};",
       ""

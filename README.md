@@ -34,13 +34,13 @@
 // cbc  ↵
 import React from 'react';
 
-// import * as S from './FileName.styles';
+import * as Styles from './FileName.styles';
 
 export const FileName = () => {
   return (
-    <>
+    <Styles.Container>
       <div>"cursor"</div>
-    </>
+    </Styles.Container>
   );
 };
 
@@ -83,21 +83,25 @@ export const Container = styled('div')(() => ({
 ```javascript
 // cbct  ↵
 import React from 'react';
-import { render, TestProvider } from '@bayon/testing';
+import { render, screen, TestProvider } from '@bayon/testing';
 
-import { FileName } from '.';
+import { FileName } from './FileName';
 
 describe('<FileName />', () => {
   it('should render component', () => {
-    const { container } = createComponent();
-    expect(container.firstChild).toBeDefined();
+    createComponent();
+    expect(screen.getByText($cursor)).toBeInTheDocument();
   });
 });
 
 const createComponent = (props = {}) => {
+  const defaultProps = {
+    ...props,
+  };
+
   return render(
     <TestProvider>
-      <FileName {...props} />
+      <FileName {...defaultProps} />
     </TestProvider>
   );
 };
@@ -111,7 +115,7 @@ const createComponent = (props = {}) => {
 ```javascript
 // cbht  ↵
 import { renderHook } from '@testing-library/react-hooks';
-import { FileName } from '.';
+import { FileName } from './FileName';
 
 describe('FileName hook', () => {
   it('"cursor 1"', () => {
@@ -127,7 +131,7 @@ describe('FileName hook', () => {
 
 ```javascript
 // cbut  ↵
-import FileName from '.';
+import { FileName } from './FileName';
 
 describe('FileName util', () => {
   it('should "cursor 1"', () => {

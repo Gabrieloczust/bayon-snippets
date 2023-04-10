@@ -3,11 +3,11 @@
     "prefix": ["cbh", "bh"],
     "body": [
       "export const ${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} = () => {",
-      "  const $cursor = () => {",
+      "  const $1 = () => {",
       "",
       "  }",
       "",
-      "  return { $cursor }",
+      "  return { $1 }",
       "};",
       ""
     ],

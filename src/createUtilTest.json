@@ -2,7 +2,7 @@
   "createUtilTest": {
     "prefix": ["cbut", "but", "bu"],
     "body": [
-      "import ${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} from '.';",
+      "import { ${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} } from './${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}';",
       "",
       "describe('${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} util', () => {",
       "  it('should $1', () => {",
