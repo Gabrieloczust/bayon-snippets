@@ -10,7 +10,7 @@
       "describe('<${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} />', () => {",
       "  it('should render component', () => {",
       "    createComponent();",
-      "    expect(screen.getByText('$1').toBeInTheDocument();",
+      "    expect(screen.getByText('$1')).toBeInTheDocument();",
       "  });",
       "});",
       "",
