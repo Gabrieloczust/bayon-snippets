@@ -2,9 +2,11 @@
   "createStyles": {
     "prefix": ["cbs", "bs"],
     "body": [
-      "import { styled } from '@bayon/commons';",
+      "import styled from 'styled-components';",
       "",
       "export const Container = styled('div')(() => ({",
+      "  display: 'flex',",
+      "  boxSizing: 'border-box',",
       "  $1",
       "}));",
       ""

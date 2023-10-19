@@ -3,7 +3,7 @@
     "prefix": ["cbct", "bct", "bt"],
     "body": [
       "import React from 'react';",
-      "import { render, screen, TestProvider } from '@bayon/testing';",
+      "import { render, screen } from '@bayon/testing';",
       "",
       "import { ${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} } from './${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}';",
       "",
@@ -20,9 +20,7 @@
       "  };",
       "",
       "  return render(",
-      "    <TestProvider>",
-      "      <${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} {...defaultProps} />",
-      "    </TestProvider>",
+      "    <${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} {...defaultProps} />",
       "  );",
       "};",
       ""

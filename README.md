@@ -68,9 +68,11 @@ export const FileName = () => {
 
 ```javascript
 // cbs  ↵
-import { styled } from '@bayon/commons';
+import styled from 'styled-components';
 
 export const Container = styled('div')(() => ({
+  display: 'flex',
+  boxSizing: 'border-box',
   "cursor"
 }));
 
@@ -83,7 +85,7 @@ export const Container = styled('div')(() => ({
 ```javascript
 // cbct  ↵
 import React from 'react';
-import { render, screen, TestProvider } from '@bayon/testing';
+import { render, screen } from '@bayon/testing';
 
 import { FileName } from './FileName';
 
@@ -100,9 +102,7 @@ const createComponent = (props = {}) => {
   };
 
   return render(
-    <TestProvider>
-      <FileName {...defaultProps} />
-    </TestProvider>
+    <FileName {...defaultProps} />
   );
 };
 
@@ -114,14 +114,28 @@ const createComponent = (props = {}) => {
 
 ```javascript
 // cbht  ↵
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@bayon/testing';
 import { FileName } from './FileName';
 
 describe('FileName hook', () => {
   it('"cursor 1"', () => {
-    const { result } = renderHook(() => FileName("cursor 2"));
+    const { result } = createHook();
+
+    act(() => {
+      result.current."cursor 2"();
+    });
+
+    expect("cursor 3")."cursor 4"();
   });
 });
+
+const createHook = (props = {}) => {
+  const defaultProps = {
+    ...props,
+  };
+
+  return renderHook(() => useFileName(defaultProps));
+};
 
 ```
 
