@@ -24,11 +24,11 @@
   "contributes": {
     "snippets": [
       {
-        "language": "javascript",
+        "language": "javascriptreact",
         "path": "./snippets/javascript.json"
       },
       {
-        "language": "javascriptreact",
+        "language": "typescriptreact",
         "path": "./snippets/javascript.json"
       }
     ]
