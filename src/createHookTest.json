@@ -2,7 +2,7 @@
   "createHookTest": {
     "prefix": ["cbht", "bht"],
     "body": [
-      "import { renderHook } from '@bayon/testing';",
+      "import { renderHook, act } from '@bayon/testing';",
       "import { ${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} } from './${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}';",
       "",
       "describe('${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} hook', () => {",

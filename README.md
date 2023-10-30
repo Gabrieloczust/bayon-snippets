@@ -114,7 +114,7 @@ const createComponent = (props = {}) => {
 
 ```javascript
 // cbht  ↵
-import { renderHook } from '@bayon/testing';
+import { renderHook, act } from '@bayon/testing';
 import { FileName } from './FileName';
 
 describe('FileName hook', () => {
