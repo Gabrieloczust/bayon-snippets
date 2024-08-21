@@ -34,7 +34,7 @@ const merge = async ({ language, files }) => {
   }
 
   try {
-    await fs.writeFile(outputPath, JSON.stringify(output, null, 2), 'utf8');
+    await fs.writeFile(outputPath, JSON.stringify(output), 'utf8');
     console.log(`Merge complete for ${language}!`);
   } catch (err) {
     console.error(`Failed to write output file: ${outputPath}`, err);
