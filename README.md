@@ -6,11 +6,15 @@
 
 - Imports
 - Create Component
+- Create Component TypeScript
 - Create Hook
+- Create Hook TypeScript
 - Create Styles
 - Create Component Test
+- Create Component Test Typescript
 - Create Util Test
 - Create Hook Test
+- Create Hook Test TypeScript
 
 ### Imports
 
@@ -39,11 +43,30 @@ import * as Styles from './FileName.styles';
 export const FileName = () => {
   return (
     <Styles.Container>
-      <div>"cursor"</div>
+      <div>$cursor</div>
     </Styles.Container>
   );
 };
 
+```
+
+```typescript
+// cbc  ↵
+import React from 'react';
+
+import * as Styles from './FileName.styles';
+
+export type TFileNameProps = {
+  $cursor1
+};
+
+export const FileName = (props: TFileNameProps) => {
+  return (
+    <Styles.Container>
+      <div>$cursor2</div>
+    </Styles.Container>
+  );
+};
 ```
 
 ### Create Hook
@@ -62,6 +85,22 @@ export const FileName = () => {
 
 ```
 
+```typescript
+// cbh  ↵
+export type TFileNameArgs = {
+  $cursor1
+};
+
+export const FileName = (args: TFileNameArgs) => {
+  const $cursor2 = () => {
+
+  }
+
+  return { $cursor3 }
+};
+
+```
+
 ### Create Styles
 
 - `cbs` || `bs` - **C**reate **B**ayon **S**tyles
@@ -73,7 +112,7 @@ import styled from 'styled-components';
 export const Container = styled('div')(() => ({
   display: 'flex',
   boxSizing: 'border-box',
-  "cursor"
+  $cursor
 }));
 
 ```
@@ -108,6 +147,32 @@ const createComponent = (props = {}) => {
 
 ```
 
+```typescript
+// cbct  ↵
+import React from 'react';
+import { render, screen } from '@bayon/testing';
+
+import { FileName, type FileNameProps } from './FileName';
+
+describe('<FileName />', () => {
+  it('should render component', () => {
+    createComponent();
+    expect(screen.getByText($cursor)).toBeInTheDocument();
+  });
+});
+
+const createComponent = (props: Partial<FileNameProps> = {}) => {
+  const defaultProps: FileNameProps = {
+    ...props,
+  };
+
+  return render(
+    <FileName {...defaultProps} />
+  );
+};
+
+```
+
 ### Create Hook Test
 
 - `cbht` || `bht` || `bh` - **C**reate **B**ayon **H**ook **T**est
@@ -118,14 +183,14 @@ import { renderHook, act } from '@bayon/testing';
 import { FileName } from './FileName';
 
 describe('FileName hook', () => {
-  it('"cursor 1"', () => {
+  it('$cursor1', () => {
     const { result } = createHook();
 
     act(() => {
-      result.current."cursor 2"();
+      result.current.$cursor2();
     });
 
-    expect("cursor 3")."cursor 4"();
+    expect($cursor3).$cursor4();
   });
 });
 
@@ -139,6 +204,33 @@ const createHook = (props = {}) => {
 
 ```
 
+```typescript
+// cbht  ↵
+import { renderHook, act } from '@bayon/testing';
+import { FileName, type TFileNameArgs } from './FileName';
+
+describe('FileName hook', () => {
+  it('$cursor1', () => {
+    const { result } = createHook();
+
+    act(() => {
+      result.current.$cursor2();
+    });
+
+    expect($cursor3).$cursor4();
+  });
+});
+
+const createHook = (args: Partial<TFileNameArgs> = {}) => {
+  const defaultArgs: TFileNameArgs = {
+    ...args,
+  };
+
+  return renderHook(() => useFileName(defaultArgs));
+};
+
+```
+
 ### Create Util Test
 
 - `cbut` || `but` || `bu` - **C**reate **B**ayon **U**til **T**est
@@ -148,8 +240,8 @@ const createHook = (props = {}) => {
 import { FileName } from './FileName';
 
 describe('FileName util', () => {
-  it('should "cursor 1"', () => {
-    expect(FileName("cursor 2")).toEqual("cursor 3");
+  it('should $cursor1', () => {
+    expect(FileName($cursor2)).toEqual($cursor3);
   });
 });
 

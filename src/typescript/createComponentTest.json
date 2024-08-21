@@ -1,0 +1,29 @@
+{
+  "createTest": {
+    "prefix": ["cbct", "bct", "bt"],
+    "body": [
+      "import React from 'react';",
+      "import { render, screen } from '@bayon/testing';",
+      "",
+      "import { ${TM_FILENAME_BASE^}, type ${TM_FILENAME_BASE^}Props } from './${TM_FILENAME_BASE}';",
+      "",
+      "describe('<${TM_FILENAME_BASE^} />', () => {",
+      "  it('should render component', () => {",
+      "    createComponent();",
+      "    expect(screen.getByText('$1')).toBeInTheDocument();",
+      "  });",
+      "});",
+      "",
+      "const createComponent = (props: Partial<${TM_FILENAME_BASE^}Props> = {}) => {",
+      "  const defaultProps: ${TM_FILENAME_BASE^}Props = {",
+      "    ...props,",
+      "  };",
+      "",
+      "  return render(",
+      "    <${TM_FILENAME_BASE^} {...defaultProps} />",
+      "  );",
+      "};"
+    ],
+    "description": "Create a test for the component based on the file name"
+  }
+}

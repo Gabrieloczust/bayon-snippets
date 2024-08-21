@@ -1,0 +1,19 @@
+{
+  "createHook": {
+    "prefix": ["cbc", "bc"],
+    "body": [
+      "export type T${TM_FILENAME_BASE^}Args = {",
+      "  $1",
+      "};",
+      "",
+      "export const use${TM_FILENAME_BASE^} = (args: T${TM_FILENAME_BASE^}Args) => {",
+      "  const $2 = () => {",
+      "",
+      "  };",
+      "",
+      "  return { $2 };",
+      "};"
+    ],
+    "description": "Create a hook with a type based on the filename"
+  }
+}
