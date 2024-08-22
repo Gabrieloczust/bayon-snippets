@@ -1,12 +1,12 @@
 {
   "createHook": {
-    "prefix": ["cbc", "bc"],
+    "prefix": ["cbh", "bh"],
     "body": [
-      "export type T${TM_FILENAME_BASE^}Args = {",
+      "export type T${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Args = {",
       "  $1",
       "};",
       "",
-      "export const use${TM_FILENAME_BASE^} = (args: T${TM_FILENAME_BASE^}Args) => {",
+      "export const ${TM_FILENAME_BASE} = (args: T${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Args) => {",
       "  const $2 = () => {",
       "",
       "  };",
