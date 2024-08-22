@@ -3,9 +3,9 @@
     "prefix": ["cbht", "bht"],
     "body": [
       "import { renderHook } from '@bayon/testing';",
-      "import { ${TM_FILENAME_BASE}, type T${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Args } from './${TM_FILENAME_BASE}';",
+      "import { ${TM_DIRECTORY}, type T${TM_DIRECTORY/(.*)/${1:/capitalize}/}Args } from './${TM_DIRECTORY}';",
       "",
-      "describe('${TM_FILENAME_BASE} hook', () => {",
+      "describe('${TM_DIRECTORY} hook', () => {",
       "  it('$1', () => {",
       "    const { result } = createHook();",
       "",
@@ -15,12 +15,12 @@
       "  });",
       "});",
       "",
-      "const createHook = (args: Partial<T${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Args> = {}) => {",
-      "  const defaultArgs: T${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}Args = {",
+      "const createHook = (args: Partial<T${TM_DIRECTORY/(.*)/${1:/capitalize}/}Args> = {}) => {",
+      "  const defaultArgs: T${TM_DIRECTORY/(.*)/${1:/capitalize}/}Args = {",
       "    ...args,",
       "  };",
       "",
-      "  return renderHook(() => ${TM_FILENAME_BASE}(defaultArgs));",
+      "  return renderHook(() => ${TM_DIRECTORY}(defaultArgs));",
       "};"
     ],
     "description": "Create a test for a hook based on the filename"
