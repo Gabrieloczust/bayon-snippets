@@ -47,8 +47,9 @@ export const FileName = () => {
     </Styles.Container>
   );
 };
-
 ```
+
+#### Typescript
 
 ```typescript
 // cbc  ↵
@@ -57,7 +58,7 @@ import React from 'react';
 import * as Styles from './FileName.styles';
 
 export type TFileNameProps = {
-  $cursor1
+  $cursor1;
 };
 
 export const FileName = (props: TFileNameProps) => {
@@ -76,29 +77,25 @@ export const FileName = (props: TFileNameProps) => {
 ```javascript
 // cbh  ↵
 export const FileName = () => {
-  const $cursor = () => {
+  const $cursor = () => {};
 
-  }
-
-  return { $cursor }
+  return { $cursor };
 };
-
 ```
+
+#### Typescript
 
 ```typescript
 // cbh  ↵
 export type TFileNameArgs = {
-  $cursor1
+  $cursor1;
 };
 
 export const FileName = (args: TFileNameArgs) => {
-  const $cursor2 = () => {
+  const $cursor2 = () => {};
 
-  }
-
-  return { $cursor3 }
+  return { $cursor3 };
 };
-
 ```
 
 ### Create Styles
@@ -112,9 +109,8 @@ import styled from 'styled-components';
 export const Container = styled('div')(() => ({
   display: 'flex',
   boxSizing: 'border-box',
-  $cursor
+  $cursor,
 }));
-
 ```
 
 ### Create Component Test
@@ -140,12 +136,11 @@ const createComponent = (props = {}) => {
     ...props,
   };
 
-  return render(
-    <FileName {...defaultProps} />
-  );
+  return render(<FileName {...defaultProps} />);
 };
-
 ```
+
+#### Typescript
 
 ```typescript
 // cbct  ↵
@@ -166,11 +161,8 @@ const createComponent = (props: Partial<FileNameProps> = {}) => {
     ...props,
   };
 
-  return render(
-    <FileName {...defaultProps} />
-  );
+  return render(<FileName {...defaultProps} />);
 };
-
 ```
 
 ### Create Hook Test
@@ -201,8 +193,9 @@ const createHook = (props = {}) => {
 
   return renderHook(() => useFileName(defaultProps));
 };
-
 ```
+
+#### Typescript
 
 ```typescript
 // cbht  ↵
@@ -228,7 +221,6 @@ const createHook = (args: Partial<TFileNameArgs> = {}) => {
 
   return renderHook(() => useFileName(defaultArgs));
 };
-
 ```
 
 ### Create Util Test
@@ -244,5 +236,4 @@ describe('FileName util', () => {
     expect(FileName($cursor2)).toEqual($cursor3);
   });
 });
-
 ```

@@ -3,9 +3,9 @@
     "prefix": ["cbht", "bht"],
     "body": [
       "import { renderHook } from '@bayon/testing';",
-      "import { ${TM_DIRECTORY}, type T${TM_DIRECTORY/(.*)/${1:/capitalize}/}Args } from './${TM_DIRECTORY}';",
+      "import { ${TM_DIRECTORY/^.*[\\/\\\\]([^\\/\\\\]+)$/$1/}, type T${TM_DIRECTORY/^.*[\\/\\\\]([^\\/\\\\]+)$/${1:/capitalize}/}Args } from './${TM_DIRECTORY/^.*[\\/\\\\]([^\\/\\\\]+)$/$1/}';",
       "",
-      "describe('${TM_DIRECTORY} hook', () => {",
+      "describe('${TM_DIRECTORY/^.*[\\/\\\\]([^\\/\\\\]+)$/$1/} hook', () => {",
       "  it('$1', () => {",
       "    const { result } = createHook();",
       "",
@@ -15,12 +15,12 @@
       "  });",
       "});",
       "",
-      "const createHook = (args: Partial<T${TM_DIRECTORY/(.*)/${1:/capitalize}/}Args> = {}) => {",
-      "  const defaultArgs: T${TM_DIRECTORY/(.*)/${1:/capitalize}/}Args = {",
+      "const createHook = (args: Partial<T${TM_DIRECTORY/^.*[\\/\\\\]([^\\/\\\\]+)$/${1:/capitalize}/}Args> = {}) => {",
+      "  const defaultArgs: T${TM_DIRECTORY/^.*[\\/\\\\]([^\\/\\\\]+)$/${1:/capitalize}/}Args = {",
       "    ...args,",
       "  };",
       "",
-      "  return renderHook(() => ${TM_DIRECTORY}(defaultArgs));",
+      "  return renderHook(() => ${TM_DIRECTORY/^.*[\\/\\\\]([^\\/\\\\]+)$/$1/}(defaultArgs));",
       "};"
     ],
     "description": "Create a test for a hook based on the filename"
