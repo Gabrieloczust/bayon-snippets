@@ -10,9 +10,6 @@
     "type": "git",
     "url": "https://github.com/Gabrieloczust/bayon-snippets/blob/master/README.md"
   },
-  "engines": {
-    "vscode": "^1.58.0"
-  },
   "categories": [
     "Snippets"
   ],
@@ -39,13 +36,26 @@
         "language": "typescriptreact",
         "path": "./snippets/typescript.json"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Bayon Snippets",
+      "properties": {
+        "bayonSnippets.library": {
+          "type": "string",
+          "default": "@mp/testing-frontend",
+          "description": "Define a biblioteca padrão de testes para utilização nos snippets da extensão."
+        }
+      }
+    }
   },
   "scripts": {
     "lint": "prettier . --write",
-    "build": "node merge.js && vsce package",
+    "build": "node ./scripts/generate-snippets.js && vsce package",
     "publish": "yarn build && vsce publish",
-    "install-extension": "code --install-extension vscode-bayon-snippet-$npm_package_version.vsix"
+    "install-extension": "node ./scripts/install-extension.js"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
   },
   "dependencies": {
     "generator-code": "^1.11.6",

@@ -8,5 +8,10 @@
     "prefix": ["impt"],
     "body": ["import { $1 } from '@mp/testing-frontend';"],
     "description": "Import @mp/testing-frontend"
+  },
+  "importUserTestingLibrary": {
+    "prefix": ["iutl"],
+    "body": ["import { $1 } from '${USER_LIBRARY}';"],
+    "description": "Import ${USER_LIBRARY}"
   }
 }
