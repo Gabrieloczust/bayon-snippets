@@ -1,7 +1,12 @@
 {
-  "importTesting": {
+  "importBayonTesting": {
     "prefix": ["ibt"],
     "body": ["import { $1 } from '@bayon/testing';"],
     "description": "Import @bayon/testing"
+  },
+  "importMpTesting": {
+    "prefix": ["impt"],
+    "body": ["import { $1 } from '@mp/testing-frontend';"],
+    "description": "Import @mp/testing-frontend"
   }
 }
