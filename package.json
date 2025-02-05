@@ -42,18 +42,18 @@
     ]
   },
   "scripts": {
+    "lint": "prettier . --write",
     "build": "node merge.js && vsce package",
     "publish": "yarn build && vsce publish",
-    "install": "code --install-extension vscode-bayon-snippet-$npm_package_version.vsix"
-  },
-  "devDependencies": {
-    "prettier": "^2.3.2",
-    "vsce": "^1.58.0"
+    "install-extension": "code --install-extension vscode-bayon-snippet-$npm_package_version.vsix"
   },
   "dependencies": {
-    "generator-code": "^1.11.1",
-    "glob": "^11.0.0",
+    "generator-code": "^1.11.6",
+    "glob": "^11.0.1",
     "vsce": "^2.15.0",
-    "yo": "^5.0.0"
+    "yo": "^5.1.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2"
   }
 }
