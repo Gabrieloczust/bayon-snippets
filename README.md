@@ -18,17 +18,18 @@
 
 ### Imports
 
-| prefix | body                                             | description                         |
-| ------ | ------------------------------------------------ | ----------------------------------- |
-| `iba`  | <code>import { } from '@bayon/analytics';</code> | **i**mport @**b**ayon/**a**nalytics |
-| `ibc`  | <code>import { } from '@bayon/commons';</code>   | **i**mport @**b**ayon/**c**ommons   |
-| `ibd`  | <code>import { } from '@bayon/date';</code>      | **i**mport @**b**ayon/**d**ate      |
-| `ibfe` | <code>import { } from '@bayon/fetch';</code>     | **i**mport @**b**ayon/**fe**tch     |
-| `ibf`  | <code>import { } from '@bayon/form';</code>      | **i**mport @**b**ayon/**f**orm      |
-| `ibi`  | <code>import { } from '@bayon/i18n';</code>      | **i**mport @**b**ayon/**i**18n      |
-| `ibs`  | <code>import { } from '@bayon/svg-icons';</code> | **i**mport @**b**ayon/**s**vg-icons |
-| `ibt`  | <code>import { } from '@bayon/testing';</code>   | **i**mport @**b**ayon/**t**esting   |
-| `ipt`  | <code>import PropTypes from 'prop-types';</code> | **i**mport **p**rop-**t**ypes       |
+| prefix | body                                                 | description                             |
+| ------ | ---------------------------------------------------- | --------------------------------------- |
+| `iba`  | <code>import { } from '@bayon/analytics';</code>     | **i**mport @**b**ayon/**a**nalytics     |
+| `ibc`  | <code>import { } from '@bayon/commons';</code>       | **i**mport @**b**ayon/**c**ommons       |
+| `ibd`  | <code>import { } from '@bayon/date';</code>          | **i**mport @**b**ayon/**d**ate          |
+| `ibfe` | <code>import { } from '@bayon/fetch';</code>         | **i**mport @**b**ayon/**fe**tch         |
+| `ibf`  | <code>import { } from '@bayon/form';</code>          | **i**mport @**b**ayon/**f**orm          |
+| `ibi`  | <code>import { } from '@bayon/i18n';</code>          | **i**mport @**b**ayon/**i**18n          |
+| `ibs`  | <code>import { } from '@bayon/svg-icons';</code>     | **i**mport @**b**ayon/**s**vg-icons     |
+| `ibt`  | <code>import { } from '@bayon/testing';</code>       | **i**mport @**b**ayon/**t**esting       |
+| `impt` | <code>import { } from '@mp/testing-frontend';</code> | **i**mport @**m**p/**t**esting-frontend |
+| `ipt`  | <code>import PropTypes from 'prop-types';</code>     | **i**mport **p**rop-**t**ypes           |
 
 ### Create Component
 
@@ -104,7 +105,7 @@ export const FileName = (args: TFileNameArgs) => {
 
 ```javascript
 // cbs  ↵
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 
 export const Container = styled('div')(() => ({
   display: 'flex',
@@ -147,7 +148,7 @@ const createComponent = (props = {}) => {
 import React from 'react';
 import { render, screen } from '@bayon/testing';
 
-import { FileName, type FileNameProps } from './FileName';
+import { FileName, type TFileNameProps } from './FileName';
 
 describe('<FileName />', () => {
   it('should render component', () => {
@@ -156,8 +157,8 @@ describe('<FileName />', () => {
   });
 });
 
-const createComponent = (props: Partial<FileNameProps> = {}) => {
-  const defaultProps: FileNameProps = {
+const createComponent = (props: Partial<TFileNameProps> = {}) => {
+  const defaultProps: TFileNameProps = {
     ...props,
   };
 
