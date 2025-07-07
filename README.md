@@ -1,45 +1,62 @@
-<p>
-  <h1 align="center">Bayon Snippets (Visual Studio Code)</h1>
-</p>
+# 🚀 Bayon Snippets
 
-## Snippets
+Snippets para desenvolvimento com React e testes no VS Code
 
-- Imports
-- Create Component
-- Create Component TypeScript
-- Create Hook
-- Create Hook TypeScript
-- Create Styles
-- Create Component Test
-- Create Component Test Typescript
-- Create Util Test
-- Create Hook Test
-- Create Hook Test TypeScript
+---
 
-### Imports
+## 📦 Sobre
 
-| prefix | body                                                     | description                                  |
-| ------ | -------------------------------------------------------- | -------------------------------------------- |
-| `iba`  | <code>import { } from '@bayon/analytics';</code>         | **i**mport @**b**ayon/**a**nalytics          |
-| `ibc`  | <code>import { } from '@bayon/commons';</code>           | **i**mport @**b**ayon/**c**ommons            |
-| `ibd`  | <code>import { } from '@bayon/date';</code>              | **i**mport @**b**ayon/**d**ate               |
-| `ibfe` | <code>import { } from '@bayon/fetch';</code>             | **i**mport @**b**ayon/**fe**tch              |
-| `ibf`  | <code>import { } from '@bayon/form';</code>              | **i**mport @**b**ayon/**f**orm               |
-| `ibi`  | <code>import { } from '@bayon/i18n';</code>              | **i**mport @**b**ayon/**i**18n               |
-| `ibs`  | <code>import { } from '@bayon/svg-icons';</code>         | **i**mport @**b**ayon/**s**vg-icons          |
-| `ibt`  | <code>import { } from '@bayon/testing';</code>           | **i**mport @**b**ayon/**t**esting            |
-| `impt` | <code>import { } from '@mp/testing-frontend';</code>     | **i**mport @**m**p/**t**esting-frontend      |
-| `iutl` | <code>import { } from '${bayonSnippets.library}';</code> | **i**mport @**u**ser/**t**esting-**l**ibrary |
-| `ipt`  | <code>import PropTypes from 'prop-types';</code>         | **i**mport **p**rop-**t**ypes                |
+Essa extensão oferece snippets prontos para acelerar o desenvolvimento com React, incluindo:
 
-### Create Component
+- Criação de componentes e hooks
+- Testes automatizados (Component, Hook e Util)
+- Estilos com styled-components
+- Imports personalizados com suporte à configuração dinâmica via `bayonSnippets.library`
 
-- `cbc` || `bc` - **C**reate **B**ayon **C**omponent
+---
 
-```javascript
-// cbc  ↵
+## ⚙️ Configuração
+
+Você pode configurar a biblioteca de testes padrão diretamente nas configurações do VS Code:
+
+```json
+"bayonSnippets.library": "@mp/testing-frontend"
+````
+
+Todos os snippets que utilizam `${bayonSnippets.library}` se adaptarão a essa configuração.
+
+---
+
+## ✨ Snippets disponíveis
+
+### 📁 Imports
+
+| Prefixo | Código gerado              | Descrição                     |
+| ------: | -------------------------- | ----------------------------- |
+|   `iba` | `@bayon/analytics`         | Import Analytics              |
+|   `ibc` | `@bayon/commons`           | Import Commons                |
+|   `ibd` | `@bayon/date`              | Import Date                   |
+|  `ibfe` | `@bayon/fetch`             | Import Fetch                  |
+|   `ibf` | `@bayon/form`              | Import Form                   |
+|   `ibi` | `@bayon/i18n`              | Import i18n                   |
+|   `ibs` | `@bayon/svg-icons`         | Import SVG Icons              |
+|   `ibt` | `@bayon/testing`           | Import Testing                |
+|  `impt` | `@mp/testing-frontend`     | Import MP Testing             |
+|  `iutl` | `${bayonSnippets.library}` | Import biblioteca configurada |
+|   `ipt` | `prop-types`               | Import PropTypes              |
+
+---
+
+## 🧱 Criação de Estruturas
+
+### 🔹 Componentes
+
+**Prefixos**: `cbc`, `bc`
+
+#### JavaScript
+
+```js
 import React from 'react';
-
 import * as Styles from './FileName.styles';
 
 export const FileName = () => {
@@ -51,17 +68,15 @@ export const FileName = () => {
 };
 ```
 
-#### Typescript
+#### TypeScript
 
-```typescript
-// cbc  ↵
+```ts
 import React from 'react';
-
 import * as Styles from './FileName.styles';
 
 export interface IFileNameProps {
   $cursor1;
-};
+}
 
 export const FileName = (props: IFileNameProps) => {
   return (
@@ -72,12 +87,15 @@ export const FileName = (props: IFileNameProps) => {
 };
 ```
 
-### Create Hook
+---
 
-- `cbh` || `bh` - **C**reate **B**ayon **H**ook
+### 🔹 Hooks
 
-```javascript
-// cbh  ↵
+**Prefixos**: `cbh`, `bh`
+
+#### JavaScript
+
+```js
 export const FileName = () => {
   const $cursor = () => {};
 
@@ -85,10 +103,9 @@ export const FileName = () => {
 };
 ```
 
-#### Typescript
+#### TypeScript
 
-```typescript
-// cbh  ↵
+```ts
 export interface IFileNameArgs {
   $cursor1;
 }
@@ -100,12 +117,13 @@ export const FileName = (args: IFileNameArgs) => {
 };
 ```
 
-### Create Styles
+---
 
-- `cbs` || `bs` - **C**reate **B**ayon **S**tyles
+### 🔹 Estilos
 
-```javascript
-// cbs  ↵
+**Prefixos**: `cbs`, `bs`
+
+```js
 import { styled } from 'styled-components';
 
 export const Container = styled('div')(() => ({
@@ -115,15 +133,19 @@ export const Container = styled('div')(() => ({
 }));
 ```
 
-### Create Component Test
+---
 
-- `cbct` || `cbt` || `bt` - **C**reate **B**ayon **C**omponent **T**est
+## 🧪 Testes
 
-```javascript
-// cbct  ↵
+### 🧩 Componentes
+
+**Prefixos**: `cbct`, `cbt`, `bt`
+
+#### JavaScript
+
+```js
 import React from 'react';
 import { render, screen } from '${bayonSnippets.library}';
-
 import { FileName } from './FileName';
 
 describe('<FileName />', () => {
@@ -142,13 +164,11 @@ const createComponent = (props = {}) => {
 };
 ```
 
-#### Typescript
+#### TypeScript
 
-```typescript
-// cbct  ↵
+```ts
 import React from 'react';
 import { render, screen } from '${bayonSnippets.library}';
-
 import { FileName, type IFileNameProps } from './FileName';
 
 describe('<FileName />', () => {
@@ -167,12 +187,15 @@ const createComponent = (props: Partial<IFileNameProps> = {}) => {
 };
 ```
 
-### Create Hook Test
+---
 
-- `cbht` || `bht` || `bh` - **C**reate **B**ayon **H**ook **T**est
+### 🧩 Hooks
 
-```javascript
-// cbht  ↵
+**Prefixos**: `cbht`, `bht`, `bh`
+
+#### JavaScript
+
+```js
 import { renderHook, act } from '${bayonSnippets.library}';
 import { FileName } from './FileName';
 
@@ -197,10 +220,9 @@ const createHook = (props = {}) => {
 };
 ```
 
-#### Typescript
+#### TypeScript
 
-```typescript
-// cbht  ↵
+```ts
 import { renderHook, act } from '${bayonSnippets.library}';
 import { FileName, type IFileNameArgs } from './FileName';
 
@@ -225,12 +247,13 @@ const createHook = (args: Partial<IFileNameArgs> = {}) => {
 };
 ```
 
-### Create Util Test
+---
 
-- `cbut` || `but` || `bu` - **C**reate **B**ayon **U**til **T**est
+### 🧩 Utils
 
-```javascript
-// cbut  ↵
+**Prefixos**: `cbut`, `but`, `bu`
+
+```js
 import { FileName } from './FileName';
 
 describe('FileName util', () => {
@@ -238,4 +261,40 @@ describe('FileName util', () => {
     expect(FileName($cursor2)).toEqual($cursor3);
   });
 });
+```
+
+---
+
+## 🧭 Contribuindo
+
+Sinta-se à vontade para abrir Issues ou Pull Requests no [repositório no GitHub](https://github.com/Gabrieloczust/bayon-snippets).
+
+---
+
+## 📃 Licença
+
+MIT © Gabriel Oczust
+
+```
+The MIT License (MIT)
+
+Copyright (c) 2025 Gabriel Oczust
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```
