@@ -1,24 +1,107 @@
-# Welcome to your VS Code Extension
+# VS Code Extension Quickstart - Bayon Snippets
 
-## What's in the folder
+Este guia rápido ajuda você a instalar, configurar, desenvolver e publicar a extensão Bayon Snippets para VS Code.
 
-- This folder contains all of the files necessary for your extension.
-- `package.json` - this is the manifest file that defines the location of the snippet file and specifies the language of the snippets.
-- `snippets/snippets.json` - the file containing all snippets.
+---
 
-## Get up and running straight away
+## 🚀 Instalação
 
-- Press `F5` to open a new window with your extension loaded.
-- Create a new file with a file name suffix matching your language.
-- Verify that your snippets are proposed on intellisense.
+### Requisitos
 
-## Make changes
+- VS Code instalado
+- Node.js (versão 16+ recomendada)
+- [pnpm](https://pnpm.io/) como gerenciador de pacotes
 
-- You can relaunch the extension from the debug toolbar after making changes to the files listed above.
-- You can also reload (`Ctrl+R` or `Cmd+R` on Mac) the VS Code window with your extension to load your changes.
+### Passos
 
-## Install your extension
+1. Clone o repositório:
 
-- To start using your extension with Visual Studio Code copy it into the `<user home>/.vscode/extensions` folder and restart Code.
-- To share your extension with the world, read on https://code.visualstudio.com/docs about publishing an extension.
-- `code --install-extension vscode-bayon-snippets-VERSION.vsix`
+```bash
+git clone https://github.com/Gabrieloczust/bayon-snippets.git
+cd bayon-snippets
+````
+
+2. Instale as dependências usando pnpm:
+
+```bash
+pnpm install
+```
+
+3. Gere os snippets e crie o pacote da extensão:
+
+```bash
+pnpm build
+```
+
+4. Instale localmente a extensão gerada:
+
+```bash
+pnpm run install-extension
+```
+
+---
+
+## ⚙️ Configuração
+
+Você pode configurar a biblioteca usada nos snippets modificando a propriedade no settings do VS Code:
+
+```json
+"bayonSnippets.library": "@mp/testing-frontend"
+```
+
+Altere para a biblioteca que desejar usar nos seus snippets.
+
+---
+
+## 🛠 Desenvolvimento
+
+* Os snippets estão localizados nas pastas `src/commons`, `src/javascript` e `src/typescript`.
+* O script `scripts/generate-snippets.ts` gera os arquivos finais de snippet em `snippets/`.
+* Modifique os arquivos `.json` originais e rode `pnpm build` para atualizar a extensão.
+
+---
+
+## 📦 Publicação
+
+Para publicar uma nova versão no marketplace:
+
+```bash
+pnpm publish
+```
+
+Este comando executa o build e publica a extensão automaticamente.
+
+---
+
+## 🔍 Testando a extensão no VS Code
+
+* Após instalar a extensão localmente, abra um arquivo `.js`, `.ts`, `.jsx` ou `.tsx`.
+* Comece a digitar um prefixo de snippet, como `cbc` para criar um componente Bayon.
+* Utilize o snippet para acelerar o desenvolvimento.
+
+---
+
+## 📚 Recursos úteis
+
+* [Documentação oficial do VS Code para extensões](https://code.visualstudio.com/api/get-started/your-first-extension)
+* [Guia oficial de snippets do VS Code](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
+* [VSCE - ferramenta oficial para empacotar e publicar extensões](https://github.com/microsoft/vscode-vsce)
+
+---
+
+## 🧑‍💻 Contato
+
+Dúvidas ou contribuições? Abra uma issue no [GitHub](https://github.com/Gabrieloczust/bayon-snippets).
+
+---
+
+## 📝 Licença
+
+MIT © Gabriel Oczust
+
+```
+
+---
+
+Quer que eu gere esse arquivo pronto para você baixar?
+```
