@@ -36,17 +36,7 @@
         "language": "typescriptreact",
         "path": "./snippets/typescript.json"
       }
-    ],
-    "configuration": {
-      "title": "Biblioteca de Testes",
-      "properties": {
-        "bayonSnippets.library": {
-          "type": "string",
-          "default": "@mp/testing-frontend",
-          "description": "Define a biblioteca padrão de testes para utilização nos snippets da extensão."
-        }
-      }
-    }
+    ]
   },
   "scripts": {
     "lint": "prettier . --write",

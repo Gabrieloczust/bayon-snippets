@@ -3,7 +3,7 @@
     "prefix": ["cbct", "bct", "bt"],
     "body": [
       "import React from 'react';",
-      "import { render, screen } from '${USER_LIBRARY}';",
+      "import { render, screen } from '@mp/testing-frontend';",
       "",
       "import { ${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/} } from './${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}';",
       "",

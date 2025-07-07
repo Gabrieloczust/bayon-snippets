@@ -11,19 +11,6 @@ Essa extensão oferece snippets prontos para acelerar o desenvolvimento com Reac
 - Criação de componentes e hooks
 - Testes automatizados (Component, Hook e Util)
 - Estilos com styled-components
-- Imports personalizados com suporte à configuração dinâmica via `USER_LIBRARY`
-
----
-
-## ⚙️ Configuração
-
-Você pode configurar a biblioteca de testes padrão diretamente nas configurações do VS Code:
-
-```json
-"USER_LIBRARY": "@mp/testing-frontend"
-````
-
-Todos os snippets que utilizam `${USER_LIBRARY}` se adaptarão a essa configuração.
 
 ---
 
@@ -42,7 +29,6 @@ Todos os snippets que utilizam `${USER_LIBRARY}` se adaptarão a essa configura�
 |   `ibs` | `@bayon/svg-icons`         | Import SVG Icons              |
 |   `ibt` | `@bayon/testing`           | Import Testing                |
 |  `impt` | `@mp/testing-frontend`     | Import MP Testing             |
-|  `iutl` | `${USER_LIBRARY}` | Import biblioteca configurada |
 |   `ipt` | `prop-types`               | Import PropTypes              |
 
 ---
@@ -145,7 +131,7 @@ export const Container = styled('div')(() => ({
 
 ```js
 import React from 'react';
-import { render, screen } from '${USER_LIBRARY}';
+import { render, screen } from '@mp/testing-frontend';
 import { FileName } from './FileName';
 
 describe('<FileName />', () => {
@@ -168,7 +154,7 @@ const createComponent = (props = {}) => {
 
 ```ts
 import React from 'react';
-import { render, screen } from '${USER_LIBRARY}';
+import { render, screen } from '@mp/testing-frontend';
 import { FileName, type IFileNameProps } from './FileName';
 
 describe('<FileName />', () => {
@@ -196,7 +182,7 @@ const createComponent = (props: Partial<IFileNameProps> = {}) => {
 #### JavaScript
 
 ```js
-import { renderHook, act } from '${USER_LIBRARY}';
+import { renderHook, act } from '@mp/testing-frontend';
 import { FileName } from './FileName';
 
 describe('FileName hook', () => {
@@ -223,7 +209,7 @@ const createHook = (props = {}) => {
 #### TypeScript
 
 ```ts
-import { renderHook, act } from '${USER_LIBRARY}';
+import { renderHook, act } from '@mp/testing-frontend';
 import { FileName, type IFileNameArgs } from './FileName';
 
 describe('FileName hook', () => {
