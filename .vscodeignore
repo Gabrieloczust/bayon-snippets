@@ -1,4 +1,12 @@
-.vscode/**
-.vscode-test/**
+# Ignora arquivos de desenvolvimento
+node_modules/
+scripts/
+src/
+pnpm-lock.yaml
+tsconfig.json
+.vscode/
+.prettierignore
+.pnpm-debug.log
+.vscodeignore
 .gitignore
 vsc-extension-quickstart.md

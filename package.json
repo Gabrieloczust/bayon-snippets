@@ -50,20 +50,21 @@
   },
   "scripts": {
     "lint": "prettier . --write",
-    "build": "node ./scripts/generate-snippets.js && vsce package",
-    "publish": "pnpm build && vsce publish",
-    "install-extension": "node ./scripts/install-extension.js"
+    "build": "ts-node scripts/generate-snippets.ts && pnpm exec vsce package",
+    "publish": "pnpm run build && pnpm exec vsce publish",
+    "install-extension": "ts-node scripts/install-extension.ts"
   },
   "engines": {
     "vscode": "^1.80.0"
   },
   "dependencies": {
-    "generator-code": "^1.11.10",
-    "glob": "^11.0.3",
-    "vsce": "^2.15.0",
-    "yo": "^5.1.0"
+    "glob": "^11.0.3"
   },
   "devDependencies": {
-    "prettier": "^3.6.2"
+    "@types/node": "^22.16.0",
+    "@vscode/vsce": "^3.6.0",
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }

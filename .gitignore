@@ -5,3 +5,4 @@ pnpm-lock.yaml
 *.vsix
 /git-*.sh*
 snippets/*
+dist/

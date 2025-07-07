@@ -1,6 +1,7 @@
-const fs = require('fs/promises');
-const { glob } = require('glob');
-const path = require('path');
+import { PathLike } from 'fs';
+import fs from 'fs/promises';
+import { glob } from 'glob';
+import path from 'path';
 
 // Sequências ANSI para cores
 const RED = '\x1b[31m';
@@ -11,7 +12,7 @@ const RESET = '\x1b[0m';
 
 const languages = ['javascript', 'typescript'];
 
-const ensureDirectoryExists = async (outputPath) => {
+const ensureDirectoryExists = async (outputPath: PathLike) => {
   try {
     await fs.mkdir(outputPath, { recursive: true });
     await fs.access(outputPath, fs.constants.R_OK | fs.constants.W_OK);
@@ -25,7 +26,13 @@ const ensureDirectoryExists = async (outputPath) => {
   }
 };
 
-const merge = async ({ language, files }) => {
+const merge = async ({
+  language,
+  files,
+}: {
+  language: string;
+  files: string[];
+}) => {
   const output = {};
   const outputPath = path.join('./snippets', `${language}.json`);
 

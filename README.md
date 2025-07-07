@@ -18,19 +18,19 @@
 
 ### Imports
 
-| prefix | body                                                 | description                                  |
-| ------ | ---------------------------------------------------- | -------------------------------------------- |
-| `iba`  | <code>import { } from '@bayon/analytics';</code>     | **i**mport @**b**ayon/**a**nalytics          |
-| `ibc`  | <code>import { } from '@bayon/commons';</code>       | **i**mport @**b**ayon/**c**ommons            |
-| `ibd`  | <code>import { } from '@bayon/date';</code>          | **i**mport @**b**ayon/**d**ate               |
-| `ibfe` | <code>import { } from '@bayon/fetch';</code>         | **i**mport @**b**ayon/**fe**tch              |
-| `ibf`  | <code>import { } from '@bayon/form';</code>          | **i**mport @**b**ayon/**f**orm               |
-| `ibi`  | <code>import { } from '@bayon/i18n';</code>          | **i**mport @**b**ayon/**i**18n               |
-| `ibs`  | <code>import { } from '@bayon/svg-icons';</code>     | **i**mport @**b**ayon/**s**vg-icons          |
-| `ibt`  | <code>import { } from '@bayon/testing';</code>       | **i**mport @**b**ayon/**t**esting            |
-| `impt` | <code>import { } from '@mp/testing-frontend';</code> | **i**mport @**m**p/**t**esting-frontend      |
-| `iutl` | <code>import { } from '${bayonSnippets.library}';</code>      | **i**mport @**u**ser/**t**esting-**l**ibrary |
-| `ipt`  | <code>import PropTypes from 'prop-types';</code>     | **i**mport **p**rop-**t**ypes                |
+| prefix | body                                                     | description                                  |
+| ------ | -------------------------------------------------------- | -------------------------------------------- |
+| `iba`  | <code>import { } from '@bayon/analytics';</code>         | **i**mport @**b**ayon/**a**nalytics          |
+| `ibc`  | <code>import { } from '@bayon/commons';</code>           | **i**mport @**b**ayon/**c**ommons            |
+| `ibd`  | <code>import { } from '@bayon/date';</code>              | **i**mport @**b**ayon/**d**ate               |
+| `ibfe` | <code>import { } from '@bayon/fetch';</code>             | **i**mport @**b**ayon/**fe**tch              |
+| `ibf`  | <code>import { } from '@bayon/form';</code>              | **i**mport @**b**ayon/**f**orm               |
+| `ibi`  | <code>import { } from '@bayon/i18n';</code>              | **i**mport @**b**ayon/**i**18n               |
+| `ibs`  | <code>import { } from '@bayon/svg-icons';</code>         | **i**mport @**b**ayon/**s**vg-icons          |
+| `ibt`  | <code>import { } from '@bayon/testing';</code>           | **i**mport @**b**ayon/**t**esting            |
+| `impt` | <code>import { } from '@mp/testing-frontend';</code>     | **i**mport @**m**p/**t**esting-frontend      |
+| `iutl` | <code>import { } from '${bayonSnippets.library}';</code> | **i**mport @**u**ser/**t**esting-**l**ibrary |
+| `ipt`  | <code>import PropTypes from 'prop-types';</code>         | **i**mport **p**rop-**t**ypes                |
 
 ### Create Component
 
@@ -91,7 +91,7 @@ export const FileName = () => {
 // cbh  ↵
 export interface IFileNameArgs {
   $cursor1;
-};
+}
 
 export const FileName = (args: IFileNameArgs) => {
   const $cursor2 = () => {};
