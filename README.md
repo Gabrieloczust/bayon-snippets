@@ -59,11 +59,11 @@ import React from 'react';
 
 import * as Styles from './FileName.styles';
 
-export type TFileNameProps = {
+export interface IFileNameProps {
   $cursor1;
 };
 
-export const FileName = (props: TFileNameProps) => {
+export const FileName = (props: IFileNameProps) => {
   return (
     <Styles.Container>
       <div>$cursor2</div>
@@ -89,11 +89,11 @@ export const FileName = () => {
 
 ```typescript
 // cbh  ↵
-export type TFileNameArgs = {
+export interface IFileNameArgs {
   $cursor1;
 };
 
-export const FileName = (args: TFileNameArgs) => {
+export const FileName = (args: IFileNameArgs) => {
   const $cursor2 = () => {};
 
   return { $cursor3 };
@@ -149,7 +149,7 @@ const createComponent = (props = {}) => {
 import React from 'react';
 import { render, screen } from '${bayonSnippets.library}';
 
-import { FileName, type TFileNameProps } from './FileName';
+import { FileName, type IFileNameProps } from './FileName';
 
 describe('<FileName />', () => {
   it('should render component', () => {
@@ -158,8 +158,8 @@ describe('<FileName />', () => {
   });
 });
 
-const createComponent = (props: Partial<TFileNameProps> = {}) => {
-  const defaultProps: TFileNameProps = {
+const createComponent = (props: Partial<IFileNameProps> = {}) => {
+  const defaultProps: IFileNameProps = {
     ...props,
   };
 
@@ -202,7 +202,7 @@ const createHook = (props = {}) => {
 ```typescript
 // cbht  ↵
 import { renderHook, act } from '${bayonSnippets.library}';
-import { FileName, type TFileNameArgs } from './FileName';
+import { FileName, type IFileNameArgs } from './FileName';
 
 describe('FileName hook', () => {
   it('$cursor1', () => {
@@ -216,8 +216,8 @@ describe('FileName hook', () => {
   });
 });
 
-const createHook = (args: Partial<TFileNameArgs> = {}) => {
-  const defaultArgs: TFileNameArgs = {
+const createHook = (args: Partial<IFileNameArgs> = {}) => {
+  const defaultArgs: IFileNameArgs = {
     ...args,
   };
 

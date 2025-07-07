@@ -38,7 +38,7 @@
       }
     ],
     "configuration": {
-      "title": "Bayon Snippets",
+      "title": "Biblioteca de Testes",
       "properties": {
         "bayonSnippets.library": {
           "type": "string",
@@ -58,12 +58,12 @@
     "vscode": "^1.80.0"
   },
   "dependencies": {
-    "generator-code": "^1.11.6",
-    "glob": "^11.0.1",
+    "generator-code": "^1.11.10",
+    "glob": "^11.0.3",
     "vsce": "^2.15.0",
     "yo": "^5.1.0"
   },
   "devDependencies": {
-    "prettier": "^3.4.2"
+    "prettier": "^3.6.2"
   }
 }

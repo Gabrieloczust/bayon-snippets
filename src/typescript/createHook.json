@@ -2,11 +2,11 @@
   "createHook": {
     "prefix": ["cbh", "bh"],
     "body": [
-      "export type T${TM_DIRECTORY/^.*[\\/\\\\]([^\\/\\\\]+)$/${1:/capitalize}/}Args = {",
+      "export interface I${TM_DIRECTORY/^.*[\\/\\\\]([^\\/\\\\]+)$/${1:/capitalize}/}Args {",
       "  $1",
-      "};",
+      "}",
       "",
-      "export const ${TM_DIRECTORY/^.*[\\/\\\\]([^\\/\\\\]+)$/$1/} = (args: T${TM_DIRECTORY/^.*[\\/\\\\]([^\\/\\\\]+)$/${1:/capitalize}/}Args) => {",
+      "export const ${TM_DIRECTORY/^.*[\\/\\\\]([^\\/\\\\]+)$/$1/} = (args: I${TM_DIRECTORY/^.*[\\/\\\\]([^\\/\\\\]+)$/${1:/capitalize}/}Args) => {",
       "  const $2 = () => {",
       "",
       "  };",
