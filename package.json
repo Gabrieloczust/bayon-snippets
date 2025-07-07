@@ -51,7 +51,7 @@
   "scripts": {
     "lint": "prettier . --write",
     "build": "node ./scripts/generate-snippets.js && vsce package",
-    "publish": "yarn build && vsce publish",
+    "publish": "pnpm build && vsce publish",
     "install-extension": "node ./scripts/install-extension.js"
   },
   "engines": {
