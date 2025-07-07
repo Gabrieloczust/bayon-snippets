@@ -3,7 +3,7 @@
     "prefix": ["cbct", "bct", "bt"],
     "body": [
       "import React from 'react';",
-      "import { render, screen } from '${USER_LIBRARY}';",
+      "import { render, screen } from '${bayonSnippets.library}';",
       "",
       "import { ${TM_DIRECTORY/^.*[\\/\\\\]([^\\/\\\\]+)$/$1/}, type T${TM_DIRECTORY/^.*[\\/\\\\]([^\\/\\\\]+)$/$1/}Props } from './${TM_DIRECTORY/^.*[\\/\\\\]([^\\/\\\\]+)$/$1/}';",
       "",
