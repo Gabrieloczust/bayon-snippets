@@ -3,6 +3,9 @@ import fs from 'fs/promises';
 import { glob } from 'glob';
 import path from 'path';
 
+const languages = ['javascript', 'typescript'];
+const DEFAULT_LIBRARY = '@mp/testing-frontend';
+
 // Sequências ANSI para cores
 const RED = '\x1b[31m';
 const GREEN = '\x1b[32m';
@@ -10,7 +13,22 @@ const YELLOW = '\x1b[33m';
 const BLUE = '\x1b[34m';
 const RESET = '\x1b[0m';
 
-const languages = ['javascript', 'typescript'];
+const getUserLibrary = async () => {
+  try {
+    const settingsPath = path.join(
+      process.env.HOME || process.env.USERPROFILE || '',
+      '.config/Code/User/settings.json',
+    );
+    const settingsContent = await fs.readFile(settingsPath, 'utf8');
+    const settings = JSON.parse(settingsContent);
+    return settings['bayonSnippets.library'] || DEFAULT_LIBRARY;
+  } catch {
+    console.warn(
+      `${YELLOW}⚠️ Could not read VS Code settings, using default library.${RESET}`,
+    );
+    return DEFAULT_LIBRARY;
+  }
+};
 
 const ensureDirectoryExists = async (outputPath: PathLike) => {
   try {
@@ -29,9 +47,11 @@ const ensureDirectoryExists = async (outputPath: PathLike) => {
 const merge = async ({
   language,
   files,
+  userLibrary,
 }: {
   language: string;
   files: string[];
+  userLibrary: string;
 }) => {
   const output = {};
   const outputPath = path.join('./snippets', `${language}.json`);
@@ -45,6 +65,15 @@ const merge = async ({
       console.log(`${BLUE}📂 Reading file: ${filename}${RESET}`);
       const contents = await fs.readFile(filename, 'utf8');
       const parsedContent = JSON.parse(contents);
+
+      // Substitui o placeholder ${USER_LIBRARY} pelo valor da configuração
+      for (const key in parsedContent) {
+        if (parsedContent[key].body) {
+          parsedContent[key].body = parsedContent[key].body.map(
+            (line: string) => line.replace(/\$\{USER_LIBRARY\}/g, userLibrary),
+          );
+        }
+      }
 
       Object.assign(output, parsedContent);
     } catch (err) {
@@ -72,6 +101,7 @@ const merge = async ({
 
 const processLanguages = async () => {
   try {
+    const userLibrary = await getUserLibrary();
     const commonFiles = await glob('src/commons/*.json');
 
     for (const language of languages) {
@@ -90,11 +120,12 @@ const processLanguages = async () => {
       }
 
       try {
-        await merge({ language, files: allFiles });
+        await merge({ language, files: allFiles, userLibrary });
       } catch (err) {
         console.error(
-          `${RED}❌ Failed to merge files for ${language}:${RESET}`,
+          `${RED}❌ Failed to merge files for ${language}:`,
           err,
+          RESET,
         );
       }
     }
